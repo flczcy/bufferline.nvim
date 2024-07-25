@@ -295,6 +295,8 @@ local function add_indicator(context)
 
   if options.indicator.style ~= "icon" then return { text = padding, highlight = highlight } end
 
+  if options.indicator.icon == "" then symbol = "" end
+
   -- since all non-current buffers do not have an indicator they need
   -- to be padded to make up the difference in size
   return { text = symbol, highlight = highlight }

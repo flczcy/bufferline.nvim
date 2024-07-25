@@ -48,7 +48,7 @@ function M.get()
   local tabs = vim.fn.gettabinfo()
   local current_tab = vim.fn.tabpagenr()
   local highlights = config.highlights
-  local style = config.options.separator_style
+  local style = config.options.tab_separator_style or config.options.separator_style
   return utils.map(function(tab)
     local is_active_tab = current_tab == tab.tabnr
     local components = render(tab, is_active_tab, style, highlights)
